@@ -2,25 +2,16 @@ const Users = require("../../model/signUpModel")
 
 module.exports={
 
-    getLogin:(req,res)=>{
-        res.render('userLogin')
-    },
+
 
     getSignup:(req,res)=>{
         res.render('userSignup')
     },
-    getHome:(req,res)=>{
-        res.render('userHome')
+//homepage logout
+    getLogout: (req, res) => {
+        res.redirect('/');
+        console.log('logout successfully');
     },
-    // postHome:(req, res) => {
-    //     if (req.body.user === user.userName && req.body.password == user.password) {
-            
-    //         console.log('login successful');
-    //         res.redirect('/home')   
-    //     } else {
-    //         res.redirect('/home')
-    //     }
-    // },
     postLogin:(req,res)=>{
         let firstname = req.body.firstname
         let lastname = req.body.lastname

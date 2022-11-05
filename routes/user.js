@@ -5,10 +5,13 @@ const userLogin = require('../controller/userController/userLogin')
 
 
 
-router.get("/",userSignup.getLogin)
+router.get("/",userLogin.getLogin)
 router.get("/signup",userSignup.getSignup)
-router.get("/home",userSignup.getHome)
+router.get("/home",userLogin.getHome)
 
+router.get('/logoutAction',userSignup.getLogout)
+
+//signUp to Login
 router.post("/",userSignup.postLogin)
 
 router.post('/home',userLogin.postHome)
