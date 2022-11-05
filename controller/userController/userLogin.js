@@ -11,7 +11,7 @@ module.exports={
                 res.render('userHome')
             }
             else{
-                console.log("invalid");
+                console.log("invalid Entry");
             }
 
         })
