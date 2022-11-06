@@ -19,10 +19,14 @@ app.use(bodyParser.urlencoded({
  
  app.use(bodyParser.json());
 
-app.set('layout', 'layout/layouts')
-app.set("view engine","hbs")
+ app.set('view engine', 'ejs')
+
+// app.set('layout', 'layout/layouts')
+// app.use(expressLayouts)
+// app.set("view engine","hbs")
+
 app.set('views','./views/user')
-app.use(expressLayouts)
+
 app.use(express.static("public"))
 app.use("javascript",express.static(path.join(__dirname + "public/javascript")))
 app.use("img",express.static(path.join(__dirname + "public/img")))
