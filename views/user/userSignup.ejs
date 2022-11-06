@@ -109,9 +109,9 @@
 
 
   if(username==''){
-    document.getElementById('usernameError').innerHTML="Username Required"
+    document.getElementById('usernameError').innerHTML="First Required"
     flag=1
-  }else if(username.length<3){
+  }else if(username.length<=2){
     document.getElementById('usernameError').innerHTML="Enter atleast 3 character"
     flag=1
   }else{
@@ -137,8 +137,6 @@
   }
 
   }
-
-
   </script>
 
 </body>

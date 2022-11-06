@@ -28,8 +28,6 @@ app.use(bodyParser.urlencoded({
 app.set('views','./views/user')
 
 app.use(express.static("public"))
-app.use("javascript",express.static(path.join(__dirname + "public/javascript")))
-app.use("img",express.static(path.join(__dirname + "public/img")))
 app.use("css",express.static(path.join(__dirname + "public/css")))
 
 // router
