@@ -11,6 +11,7 @@ module.exports={
     getLogout: (req, res) => {
         res.redirect('/');
         console.log('logout successfully');
+        //
     },
     postLogin:(req,res)=>{
         let firstname = req.body.firstname

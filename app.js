@@ -24,10 +24,9 @@ app.set("view engine","hbs")
 app.set('views','./views/user')
 app.use(expressLayouts)
 app.use(express.static("public"))
-app.use("javascript",express.static(path.join(__dirname + "javascript")))
-app.use(express.static("views/user/public"))
-app.use("views/user/public/css",express.static(path.join(__dirname + "views/user/public/css")))
-app.use("views/user/public/img",express.static(path.join(__dirname + "views/user/public/img")))
+app.use("javascript",express.static(path.join(__dirname + "public/javascript")))
+app.use("img",express.static(path.join(__dirname + "public/img")))
+app.use("css",express.static(path.join(__dirname + "public/css")))
 
 // router
 app.use('/',userRouter)
