@@ -12,7 +12,7 @@ router.get("/home",userLogin.getHome)
 router.get('/logoutAction',userSignup.getLogout)
 
 //signUp to Login
-router.post("/",userSignup.postLogin)
+router.post("/",userSignup.postSignup)
 
 router.post('/home',userLogin.postHome)
 

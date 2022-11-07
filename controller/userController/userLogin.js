@@ -4,10 +4,19 @@ const user = require("../../model/signUpModel")
 module.exports={
 
     getLogin:(req,res)=>{
-        res.render('userLogin')
+        if(req.session.email){
+            res.render('user/userHome')
+        }else{
+            res.render('user/userLogin')
+        }
+        
     },
     getHome:(req,res)=>{
-        res.render('userHome')
+        if(req.session.email){
+            res.render('user/userHome')
+        }else{
+            res.redirect('/')
+        }
     },
 
     postHome:(req,res)=>{
@@ -15,8 +24,8 @@ module.exports={
         user.findOne({email:email, password:password})
         .then((result)=>{
             if(result){
-                req.session.loggedIn=true
-                req.session.user=response.user
+                req.session.loggedIn=true;
+                req.session.email = req.body.email
                 res.redirect('/home')
             }
             else{
