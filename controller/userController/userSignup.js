@@ -9,13 +9,11 @@ module.exports={
     },
 //homepage logout
     getLogout: (req, res) => {
-        console.log(req.session);
         req.session.destroy((err) => {
             if (err) {
                 console.log(err);
             } else {
                 console.log('logout successfully');
-                console.log(req.session);
                 res.redirect('/');
             }
         })
