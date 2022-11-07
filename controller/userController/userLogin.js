@@ -1,4 +1,5 @@
-const Users = require("../../model/signUpModel")
+const { response } = require("express")
+const user = require("../../model/signUpModel")
 
 module.exports={
 
@@ -11,12 +12,15 @@ module.exports={
 
     postHome:(req,res)=>{
         const {email,password} = req.body
-        Users.findOne({email:email, password:password})
+        user.findOne({email:email, password:password})
         .then((result)=>{
             if(result){
-                res.render('userHome')
+                req.session.loggedIn=true
+                req.session.user=response.user
+                res.redirect('/home')
             }
             else{
+                res.redirect('/')
                 console.log("invalid Entry");
             }
 
