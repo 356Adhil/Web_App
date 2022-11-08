@@ -94,6 +94,20 @@ module.exports = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+
+    // Delete User
+
+    deleteUser:async(req,res)=>{
+        try {
+            const id = req.query.email
+           await User.deleteOne({email: id})
+           res.redirect('/admin')
+           
+        } catch (error) {
+            console.log(error.message);
+
+        }
     }
     
 }
