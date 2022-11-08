@@ -28,7 +28,7 @@
                 <td><%= usersData.first_name %></td>
                 <td><%= usersData.last_name %></td>
                 <td><%= usersData.email %></td>
-                <td><a href="/admin/edit" class="btn btn-secondary">Edit</a></td>
+                <td><a href="/admin/edit?email=<%= usersData.email %>" class="btn btn-secondary">Edit</a></td>
                 <!-- <td><a href="/admin/add" class="btn btn-secondary">Add User</a></td> -->
                 <td><a href="/admin/delete" class="btn btn-danger" onclick="return confirm('Are you want to delete{{this.name}}')">Delete</a></td>
         
@@ -39,7 +39,7 @@
     </table>
     <table>
         <tbody>
-            <td><a href="/admin/add" class="btn btn-secondary">Add User</a></td>
+            <td><a href="/admin/add" class="btn btn-success">Add User</a></td>
         </tbody>
     </table>
 

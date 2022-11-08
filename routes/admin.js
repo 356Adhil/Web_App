@@ -9,4 +9,7 @@ router.get('/home',adminController.getHome)
 router.get('/add',adminController.addUser)
 router.post('/add',adminController.postaddUser)
 
+router.get('/edit',adminController.editUser)
+router.post('/edit',adminController.updateUser)
+
 module.exports = router

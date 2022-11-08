@@ -30,6 +30,9 @@ module.exports = {
         }
 
     },
+
+        // add new user
+
     addUser:(req,res)=>{
         try {
             res.render('admin/newUser')
@@ -61,9 +64,36 @@ module.exports = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+
+    // edit user
+
+    editUser:async(req,res)=>{
+        try {
+            const id = req.query.email
+           const userData = await User.findOne({email: id})
+           if(userData){
+            res.render('admin/editUser',{user:userData})
+           }
+           else{
+            res.redirect('/admin')
+           }
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+
+    // Update User
+
+    updateUser:async(req,res)=>{
+        try {
+            const id = req.query.email
+           const userData = await User.updateOne({email: id},{$set:{first_name:req.body.firstname, last_name:req.body.lastname, email:req.body.email, password:req.body.password}})
+           res.redirect('/admin')
+        } catch (error) {
+            console.log(error.message);
+        }
     }
-    // add new user
-
-
-
+    
 }
