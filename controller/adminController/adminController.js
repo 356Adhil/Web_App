@@ -108,6 +108,19 @@ module.exports = {
             console.log(error.message);
 
         }
+    },
+
+    // Logout Admin
+
+    getLogout:(req, res) => {
+        req.session.destroy((err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('logout successfully');
+                res.redirect('/admin');
+            }
+        })
     }
     
 }
