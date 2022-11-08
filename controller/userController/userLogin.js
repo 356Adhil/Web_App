@@ -27,6 +27,7 @@ module.exports={
                 req.session.loggedIn=true;
                 req.session.email = req.body.email
                 res.redirect('/home')
+                console.log(req.session.email);
             }
             else{
                 res.redirect('/')

@@ -19,7 +19,7 @@ mongoose.connect("mongodb://localhost:27017/Registration",{
 app.use(session({
     secret:'thisismykey',
     saveUninitialized:true,
-    cookie:{maxAge:60000},
+    cookie:{maxAge:600000},
     resave:false
 }))
 
