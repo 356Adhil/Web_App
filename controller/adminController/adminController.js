@@ -35,6 +35,7 @@ module.exports = {
 
     addUser:(req,res)=>{
         try {
+            req.session.admin
             res.render('admin/newUser')
         } catch (error) {
             console.log(error.message);
@@ -56,6 +57,7 @@ module.exports = {
             })
             const userData = await user.save()
             if(userData){
+                req.session.admin
                 res.redirect('/admin')
             }else{
                 res.render('admin/newUser')
@@ -73,6 +75,7 @@ module.exports = {
             const id = req.query.email
            const userData = await User.findOne({email: id})
            if(userData){
+            req.session.admin
             res.render('admin/editUser',{user:userData})
            }
            else{
@@ -88,6 +91,7 @@ module.exports = {
 
     updateUser:async(req,res)=>{
         try {
+            req.session.admin
             const id = req.query.email
            const userData = await User.updateOne({email: id},{$set:{first_name:req.body.firstname, last_name:req.body.lastname, email:req.body.email, password:req.body.password}})
            res.redirect('/admin')
@@ -100,6 +104,7 @@ module.exports = {
 
     deleteUser:async(req,res)=>{
         try {
+            req.session.admin
             const id = req.query.email
            await User.deleteOne({email: id})
            res.redirect('/admin')

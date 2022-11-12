@@ -1,11 +1,14 @@
-const User = require("../../model/signUpModel")
+const User = require("../../model/signUpModel");
+
+var msg = ''
 
 module.exports={
 
 
 
     getSignup:(req,res)=>{
-        res.render('user/userSignup')
+        res.render('user/userSignup',{msg})
+        msg='';
     },
 //homepage logout
     getLogout: (req, res) => {
@@ -37,7 +40,10 @@ module.exports={
             res.redirect('/')
         })
         .catch((err)=>{
+            msg="Email already exist"
             console.log(err);
+            res.redirect('/signup')
+
         })
 
     },

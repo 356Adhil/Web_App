@@ -34,7 +34,7 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Edit User</h2>
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="return validation()">
 
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
@@ -50,7 +50,8 @@
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input value="<%= user.last_name %>" type="text" id="form3Example2" name="lastname" class="form-control" />
-                    <label class="form-label" for="form3Example2">Last name</label>
+                    <label class="form-label" for="form3Example2">Last name</label><br>
+                  <span id="lastnameError" style="color:red ;"></span>
                   </div>
                 </div>
               </div>
@@ -88,22 +89,30 @@
 
 
 
-<!-- <script>
+<script>
   function validation(){
   let flag=0
   let username= document.getElementById('form3Example1').value.trim()
+  let lastname= document.getElementById('form3Example2').value.trim()
   let email = document.getElementById('form3Example3').value.trim()      
   let password = document.getElementById('form3Example4').value.trim()
 
 
   if(username==''){
-    document.getElementById('usernameError').innerHTML="First Required"
+    document.getElementById('usernameError').innerHTML="First Name Required"
     flag=1
   }else if(username.length<=2){
     document.getElementById('usernameError').innerHTML="Enter atleast 3 character"
     flag=1
   }else{
     document.getElementById('usernameError').innerHTML=""
+  }
+
+  if(lastname==''){
+    document.getElementById('lastnameError').innerHTML="Last Name Required"
+    flag=1
+  }else{
+    document.getElementById('lastnameError').innerHTML=""
   }
 
   if(email==''){
@@ -125,7 +134,7 @@
   }
 
   }
-  </script> -->
+  </script>
 
 </body>
 </html>

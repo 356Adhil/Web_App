@@ -49,7 +49,8 @@
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input type="text" id="form3Example2" name="lastname" class="form-control" />
-                    <label class="form-label" for="form3Example2">Last name</label>
+                    <label class="form-label" for="form3Example2">Last name</label><br>
+                    <span id="lastnameError" style="color: red;"></span>
                   </div>
                 </div>
               </div>
@@ -59,7 +60,9 @@
                 <input type="email" id="form3Example3" name="email" class="form-control"/>
                 <label class="form-label" for="form3Example3">Email address</label><br>
                 <span id="emailError" style="color: red;"></span>
+                <span style="color: red;"><%= msg %></span>
               </div>
+
 
               <!-- Password input -->
               <div class="form-outline mb-4">
@@ -68,13 +71,6 @@
                 <span id="passwordError" style="color: red;"></span>
               </div>
 
-              <!-- Checkbox -->
-              <!-- <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
-                  Subscribe to our newsletter
-                </label>
-              </div> -->
 
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
@@ -119,6 +115,13 @@
     flag=1
   }else{
     document.getElementById('usernameError').innerHTML=""
+  }
+
+  if(lastname==''){
+    document.getElementById('lastnameError').innerHTML="Last Name Required"
+    flag=1
+  }else{
+    document.getElementById('lastnameError').innerHTML=""
   }
 
   if(email==''){
