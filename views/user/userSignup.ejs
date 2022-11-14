@@ -46,27 +46,28 @@
                     <span id="usernameError" style="color: red;"></span>
                   </div>
                 </div>
+
+                <!-- last name -->
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input type="text" id="form3Example2" name="lastname" class="form-control" />
                     <label class="form-label" for="form3Example2">Last name</label><br>
-                    <span id="lastnameError" style="color: red;"></span>
+                    <span id="lastError" style="color: red;"></span>
                   </div>
                 </div>
               </div>
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" name="email" class="form-control"/>
+                <input type="email" id="form3Example3" name="email" class="form-control" />
                 <label class="form-label" for="form3Example3">Email address</label><br>
                 <span id="emailError" style="color: red;"></span>
-                <span style="color: red;"><%= msg %></span>
               </div>
 
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" name="password" class="form-control" />
+                <input type="password" id="form3Example4" name="password" class="form-control"/>
                 <label class="form-label" for="form3Example4">Password</label><br>
                 <span id="passwordError" style="color: red;"></span>
               </div>
@@ -108,7 +109,7 @@
 
 
   if(username==''){
-    document.getElementById('usernameError').innerHTML="First Required"
+    document.getElementById('usernameError').innerHTML="First name Required"
     flag=1
   }else if(username.length<=2){
     document.getElementById('usernameError').innerHTML="Enter atleast 3 character"
@@ -117,12 +118,6 @@
     document.getElementById('usernameError').innerHTML=""
   }
 
-  if(lastname==''){
-    document.getElementById('lastnameError').innerHTML="Last Name Required"
-    flag=1
-  }else{
-    document.getElementById('lastnameError').innerHTML=""
-  }
 
   if(email==''){
       document.getElementById('emailError').innerHTML="email Required"
