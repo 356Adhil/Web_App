@@ -1,121 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-        <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-</head>
-<body>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <!-- Section: Design Block -->
-<section class="text-center text-lg-start">
-  <style>
-    .cascading-right {
-      margin-right: -50px;
-    }
+    <section class="text-center text-lg-start">
+      <style>
+        .cascading-right {
+          margin-right: -50px;
+        }
 
-    @media (max-width: 991.98px) {
-      .cascading-right {
-        margin-right: 0;
-      }
-    }
-  </style>
+        @media (max-width: 991.98px) {
+          .cascading-right {
+            margin-right: 0;
+          }
+        }
+      </style>
 
-  <!-- Jumbotron -->
-  <div class="container py-4">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Login Now</h2>
-            <form action="/home" method="post" onsubmit="return validation()">
+      <!-- Jumbotron -->
+      <div class="container py-4">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div
+              class="card cascading-right"
+              style="
+                background: hsla(0, 0%, 100%, 0.55);
+                backdrop-filter: blur(30px);
+              "
+            >
+              <div class="card-body p-5 shadow-5 text-center">
+                <h2 class="fw-bold mb-5">Login Now</h2>
+                <form
+                  action="/home"
+                  method="post"
+                  onsubmit="return validation()"
+                >
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form3Example3"
+                      name="email"
+                      class="form-control"
+                    />
+                    <label class="form-label" for="form3Example3"
+                      >Email address</label
+                    ><br />
+                    <span id="emailError" style="color: red"></span>
+                  </div>
 
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" name="email" class="form-control" />
-                <label class="form-label" for="form3Example3">Email address</label><br>
-                <span id="emailError" style="color: red;"></span>
-              </div>
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="form3Example4"
+                      name="password"
+                      class="form-control"
+                    />
+                    <label class="form-label" for="form3Example4"
+                      >Password</label
+                    ><br />
+                    <span id="passwordError" style="color: red"></span>
+                  </div>
 
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" name="password" class="form-control"/>
-                <label class="form-label" for="form3Example4">Password</label><br>
-                <span id="passwordError" style="color: red;"></span>
-              </div>
-
-              <!-- Checkbox -->
-              <!-- <div class="form-check d-flex justify-content-center mb-4">
+                  <!-- Checkbox -->
+                  <!-- <div class="form-check d-flex justify-content-center mb-4">
                 <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                 <label class="form-check-label" for="form2Example33">
                   Subscribe to our newsletter
                 </label>
               </div> -->
 
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Login
-              </button>
-              <div>
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Login
+                  </button>
+                  <div>
+                    <span>Not a member? </span
+                    ><a style="text-decoration: none" href="/signup">Sign Up</a>
+                  </div>
+                  <div>
+                    <a class="btn btn-success mt-4" href="/admin"
+                      >Admin Login</a
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
-                <span>Not a member? </span><a style="text-decoration:none ;" href="/signup">Sign Up</a>
-              </div>
-              <div>
-                <a class="btn btn-success mt-4" href="/admin">Admin Login</a>
-              </div>
-            </form>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img
+              src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+              class="w-100 rounded-4 shadow-4"
+              alt=""
+            />
           </div>
         </div>
       </div>
+      <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
 
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" class="w-100 rounded-4 shadow-4"
-          alt="" />
-      </div>
-    </div>
-  </div>
-  <!-- Jumbotron -->
-</section>
-<!-- Section: Design Block -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
- 
+    <script>
+      function validation() {
+        let flag = 0;
+        let email = document.getElementById("form3Example3").value.trim();
+        let password = document.getElementById("form3Example4").value.trim();
 
+        if (email == "") {
+          document.getElementById("emailError").innerHTML = "Email Required";
+          flag = 1;
+        } else {
+          document.getElementById("emailError").innerHTML = "";
+        }
 
-<script>
-  function validation(){
-  let flag=0
-  let email = document.getElementById('form3Example3').value.trim()      
-  let password = document.getElementById('form3Example4').value.trim()
+        if (password == "") {
+          document.getElementById("passwordError").innerHTML =
+            "Password Required";
+          flag = 1;
+        } else {
+          document.getElementById("passwordError").innerHTML = "";
+        }
 
-
-  if(email==''){
-      document.getElementById('emailError').innerHTML="Email Required"
-      flag=1
-  }else{
-      document.getElementById('emailError').innerHTML=""
-  }
-
-  if(password==''){
-      document.getElementById('passwordError').innerHTML="Password Required"
-      flag=1
-  }else{
-      document.getElementById('passwordError').innerHTML=""
-  }
-
-  if(flag==1){
-      return false
-  }
-
-  }
-  </script>
-
-
-</body>
+        if (flag == 1) {
+          return false;
+        }
+      }
+    </script>
+  </body>
 </html>
